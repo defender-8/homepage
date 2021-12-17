@@ -196,7 +196,7 @@ p {
   cursor: pointer;
   position: relative;
   margin-bottom: 8px;
-  padding-left: 1.25em;
+  padding-left: 20px;
   transition: color 0.3s ease-in-out;
 }
 
@@ -209,13 +209,17 @@ p {
   font-weight: 900;
   content: "\f067";
   position: absolute;
-  top: 0.125em;
+  top: 0;
   left: 0;
   color: #fdc700;
 }
 
 .accordion-item-toggle.active:before {
   transform: rotate(45deg);
+}
+
+.accordion.accordion-timeline .accordion-item-toggle:before {
+  top: 4px;
 }
 
 .accordion-item-slide {
@@ -227,6 +231,29 @@ p {
 .accordion-item-slide.active {
   height: auto;
   overflow-y: unset;
+}
+
+/* -- Timeline Header */
+.timeline-header {
+  margin-top: 0;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+
+.timeline-title {
+  font-size: 24px;
+}
+
+.timeline-subtitle {
+  font-size: 18px;
+  color: #8b8e90;
+}
+
+.timeline-period {
+  font-size: 16px;
 }
 
 @media screen and (min-width: 992px) {
@@ -317,5 +344,11 @@ p {
   /* -- Section */
   .section-left {
     margin-bottom: 32px;
+  }
+
+  /* -- Timeline Header */
+  .timeline-header {
+    flex-flow: column;
+    align-items: flex-start;
   }
 }
